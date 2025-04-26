@@ -24,9 +24,9 @@ Atualmente, o site apresenta o título "The MLP Simulation", que conta a histór
 
 Aqui estão algumas imagens aleatórias que representam a interface e os elementos do site:
 
-(https://i.pinimg.com/736x/d0/d9/bc/d0d9bc538eb4220de02edc4e2a40a62d.jpg)
-(https://i.pinimg.com/736x/18/e5/3e/18e53ec57c3b09674ba84a9d42c45025.jpg)
-(https://pbs.twimg.com/media/FtZFNBnWAAAKjSW.jpg)
+![Imagem Aleatória 1](https://i.pinimg.com/736x/d0/d9/bc/d0d9bc538eb4220de02edc4e2a40a62d.jpg)
+![Imagem Aleatória 2](https://i.pinimg.com/736x/18/e5/3e/18e53ec57c3b09674ba84a9d42c45025.jpg)
+![Imagem Aleatória 3](https://pbs.twimg.com/media/FtZFNBnWAAAKjSW.jpg)
 
 ## Conclusão 💖
 
