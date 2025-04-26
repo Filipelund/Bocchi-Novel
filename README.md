@@ -25,9 +25,9 @@ Atualmente, o site apresenta o título "The MLP Simulation", que conta a histór
 Aqui estão algumas imagens aleatórias que representam a interface e os elementos do site:
 
 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-    <img src="https://i.pinimg.com/736x/d0/d9/bc/d0d9bc538eb4220de02edc4e2a40a62d.jpg" alt="Imagem Aleatória 1" style="width: 80%; height: auto; border-radius: 8px;">
-    <img src="https://i.pinimg.com/736x/18/e5/3e/18e53ec57c3b09674ba84a9d42c45025.jpg" alt="Imagem Aleatória 2" style="width: 80%; height: auto; border-radius: 8px;">
-    <img src="https://pbs.twimg.com/media/FtZFNBnWAAAKjSW.jpg" alt="Imagem Aleatória 3" style="width: 80%; height: auto; border-radius: 8px;">
+    <img src="https://i.pinimg.com/736x/d0/d9/bc/d0d9bc538eb4220de02edc4e2a40a62d.jpg" alt="Imagem Aleatória 1" style="width: 200px; height: auto; border-radius: 8px;">
+    <img src="https://i.pinimg.com/736x/18/e5/3e/18e53ec57c3b09674ba84a9d42c45025.jpg" alt="Imagem Aleatória 2" style="width: 200px; height: auto; border-radius: 8px;">
+    <img src="https://pbs.twimg.com/media/FtZFNBnWAAAKjSW.jpg" alt="Imagem Aleatória 3" style="width: 200px; height: auto; border-radius: 8px;">
 </div>
 
 ## Conclusão 💖
