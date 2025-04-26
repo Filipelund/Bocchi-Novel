@@ -1,7 +1,6 @@
-# Bocchi-Novel
+# Bocchi-Novel 🌸
 
-
-# Descrição do Site: BocchiNovels 🌸
+## Descrição do Site: BocchiNovels
 
 BocchiNovels é uma plataforma super fofa dedicada à leitura e compartilhamento de novels, com um foco especial em histórias inspiradas no universo de *My Little Pony*! 🦄✨ O site oferece uma experiência única e interativa para os leitores, permitindo que eles explorem mundos fictícios de maneira envolvente e divertida. :3
 
@@ -21,18 +20,13 @@ BocchiNovels é uma plataforma super fofa dedicada à leitura e compartilhamento
 
 Atualmente, o site apresenta o título "The MLP Simulation", que conta a história de William, um jovem estudante que descobre um aplicativo que cria um mundo virtual inspirado em *My Little Pony*. A narrativa mistura elementos de humor, suspense e terror psicológico, proporcionando uma leitura envolvente. :3
 
-### Exemplo de Capítulo
+## Imagens Aleatórias 🖼️
 
-- **Capítulo 1: William tem certeza disso?** 
-  - Uma introdução à vida de William e sua descoberta do aplicativo que mudará sua vida. 🌟
+Aqui estão algumas imagens aleatórias que representam a interface e os elementos do site:
 
-## Imagens 🖼️
-
-Aqui estão algumas imagens que representam a interface e os elementos do site:
-
-![Banner do Site](link-da-imagem-do-banner)
-![Capa do Novel](link-da-imagem-da-capa)
-![Exemplo de Capítulo](link-da-imagem-do-capitulo)
+(https://i.pinimg.com/736x/d0/d9/bc/d0d9bc538eb4220de02edc4e2a40a62d.jpg)
+(https://i.pinimg.com/736x/18/e5/3e/18e53ec57c3b09674ba84a9d42c45025.jpg)
+(https://pbs.twimg.com/media/FtZFNBnWAAAKjSW.jpg)
 
 ## Conclusão 💖
 
