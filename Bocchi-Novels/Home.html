@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Images/Icon-do-site.ico" type="image/png">
+    <title>Home: BocchiNovels</title>
+
+<style>
+
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: Arial, sans-serif;
+background-color: RGB(255, 182, 193);
+}
+
+
+
+
+
+/* Barra superior */
+.barra-superior-fixa {
+position: -webkit-sticky;
+top: 0;
+background-image: url('/Images/Banner-Bocchi-no-Rock.webp'); /* URL da imagem de fundo */
+background-size: 90%;
+border-radius: 50%;
+background-repeat: no-repeat;
+background-position: center;
+color: white;
+padding: 20px;
+display: flex;
+justify-content: center; /* Centraliza o conteúdo */
+align-items: center;
+height: 150px;
+width: 100%; /* Garantir que ocupe toda a largura */
+}
+
+/* Container que agrupa o título e a imagem */
+.conteudo-barra-superior {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+
+
+/* Título */
+.titulo-barra-superior {
+font-size: 36px;
+font-weight: bold;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+margin-right: 20px; /* Espaço entre o título e a imagem */
+color: RGB(255, 20, 147);
+border-bottom: 2px solid rgb(255, 0, 255);
+}
+
+/* Imagem ao lado do título */
+.imagem-barra-superior {
+width: 60px;
+height: 60px;
+background-image: url('/Images/Icon-pinterest.webp'); /* Substitua com a URL da imagem desejada */
+background-size: cover;
+background-position: center;
+border-radius: 50%;
+border: 2px solid RGB(70, 0, 130);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container principal - sem fundo, apenas borda branca */
+.Grade-Novels {
+max-width: 800px; /* Diminuímos a largura para um tamanho mais compacto */
+width: 90%; /* Garantir que o container seja responsivo */
+margin: 50px auto; /* Centraliza o container */
+padding: 15px;
+background-color: transparent; /* Fundo transparente */
+border: 3px solid #fff;  /* Borda branca */
+border-radius: 10px; /* Cantos arredondados */
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Sombras mais sutis */
+}
+
+
+
+
+
+
+.titulos-disponiveis{
+font-size: 28px; /* Tamanho do título */
+font-weight: bold; /* Negrito para dar destaque */
+color: #333; /* Cor do texto */
+margin-bottom: 20px; /* Menor margem abaixo do título */
+position: relative; /* Necessário para o pseudo-elemento */
+display: inline-block; /* Para o sublinhado ser aplicado corretamente */
+padding-bottom: 30px;
+text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+background: linear-gradient(90deg, #555, #333);
+background-clip: text;            /* Propriedade padrão para navegadores modernos */
+-webkit-background-clip: text;    /* Prefixo para navegadores baseados em WebKit (Safari, Chrome antigos) */
+-webkit-text-fill-color: transparent; /* Necessário para o efeito funcionar no WebKit */
+color: transparent;               /* Garante compatibilidade para navegadores que suportam background-clip: text sem prefixo */
+letter-spacing: 1px;
+}
+
+
+
+
+
+/* Estilo para cada título de manga (containers menores) */
+.titulo-manga {
+    margin-bottom: 12px;
+    padding: 10px; /* Menor padding */
+    background-color: White; /* Fundo transparente */
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);  /* Sombras mais sutis */
+    max-width: 300px; /* Limitar a largura máxima do container */
+    margin-left: auto; /* Centralizar */
+    margin-right: auto; /* Centralizar */
+    text-align: center;
+}
+
+
+
+
+
+.imagem-manga {
+    width: 100%;
+    max-width: 220px; /* Tamanho máximo da imagem */
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    /* Transições suaves para todos os efeitos */
+}
+
+/* Efeito de hover */
+.imagem-manga:hover, .imagem-manga.active {
+    transform: scale(1.1); /* Aumenta a imagem */
+    filter: brightness(0.8); /* Deixa a imagem mais escura */
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.6); /* Sombra vibrante ao redor da imagem */
+    border: 5px solid rgb(255, 20, 147); /* Adiciona um contorno colorido */
+}
+
+
+
+
+
+
+
+
+
+/* Classificação em estrelas */
+.classificacao {
+margin-bottom: 8px;
+margin-left: 4px;
+}
+
+.classificacao span {
+font-size: 16px; /* Menor tamanho para a classificação */
+color: gold;
+}
+
+
+
+/* Número de capítulos lançados */
+.capitulos {
+font-size: 14px; /* Menor tamanho para o texto de capítulos */
+color: #555;
+margin-left: 8px;
+}
+
+
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+.container-principal {
+padding: 10px;
+}
+
+.titulo-manga {
+margin-bottom: 10px;
+}
+
+.imagem-manga {
+max-width: 100%;
+}
+
+.titulo {
+font-size: 26px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Novo container para comentários */
+.container-comentarios {
+    margin-top: 50px;
+    padding: 20px;
+    background-image: url('/Images/Background\ Comentarios.jpg'); /* Substitua pelo caminho da imagem desejada */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+
+.container-comentarios h2 {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.texto-comentario p {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    padding-bottom: 10px;
+ filter: drop-shadow(0 0 1px #FFF);
+}
+
+
+
+
+
+
+.container-comentarios .github-link {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.container-comentarios .github-link a {
+    font-size: 18px;
+    color: #fff;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: -5px -5px 5px rgba(0,0,0,0.2);
+-webkit-box-shadow: -2px -2px 2px rgb(0, 0, 0, 0.2);
+}
+
+.container-comentarios .github-link a:hover {
+    background-color: #555;
+}
+
+
+
+
+
+.icone-Github {
+width: 40px;
+height: 40px;
+background-image: url('/Images/Icon-Github.webp'); /* Substitua com a URL da imagem desejada */
+background-size: cover;
+background-position: center;
+border-radius: 50%;
+margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+/* Para tela pequena*/
+@media (max-width: 768px) {
+    .container-comentarios h2 {
+        font-size: 20px;
+    }
+
+    .texto-comentario {
+        font-size: 14px;
+    }
+
+    .container-comentarios .github-link a {
+        font-size: 16px;
+    }
+}
+
+
+
+
+</style>
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+
+
+
+
+<script>
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const imagensManga = document.querySelectorAll('.imagem-manga');
+    
+    imagensManga.forEach(imagem => {
+        // Para quando o usuário tocar na imagem
+        imagem.addEventListener('touchstart', function() {
+            // Adiciona a classe active
+            imagem.classList.add('active');
+            
+            // Remove a classe 'active' após 1 segundo (ajustável)
+            setTimeout(function() {
+                imagem.classList.remove('active');
+            }, 1000); // 1000ms = 1 segundo (ajustável)
+        });
+
+        // Para desktop (quando o mouse entra e sai da imagem)
+        imagem.addEventListener('mouseenter', function() {
+            imagem.classList.add('active');
+        });
+
+        imagem.addEventListener('mouseleave', function() {
+            imagem.classList.remove('active');
+        });
+    });
+});
+
+
+
+
+</script>
+
+
+
+
+    
+
+
+
+<div class="barra-superior-fixa">
+
+
+<div class="conteudo-barra-superior">
+
+<h1 class="titulo-barra-superior">BocchiNovels</h1>
+<div class="imagem-barra-superior"></div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="Grade-Novels">
+
+
+
+<h1 class="titulos-disponiveis">Títulos Disponíveis</h1>
+
+
+<div class="titulo-manga">
+
+<a href="Novels/The-MLP-Simulation/The-MLP-Simulation.html">
+<img src="Novels\The-MLP-Simulation\Capas-fotos\Capa-New-Simulation.webp" alt="Título Manga" class="imagem-manga">
+</a>
+
+<h3>The MLP Simulation</h3>
+
+<div class="classificacao">
+    <span>⭐⭐⭐⭐⭐</span> <!-- Exemplo de 4 estrelas -->
+</div>
+
+<div class="capitulos">
+    2 capítulos lançados
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Container de Comentários e Link do GitHub -->
+<div class="container-comentarios">
+
+
+<h2>Comentários</h2>
+
+<div class="texto-comentario">
+<p>Bem, isso aqui é um projeto com o intuito de reproduzir um local para ler novels de forma única, com o meu estilo fofo :3</p>
+</div>
+
+<div class="github-link">
+<div class="icone-Github"></div>
+<a href="https://github.com/Filipelund" target="_blank">Visite meu GitHub</a>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

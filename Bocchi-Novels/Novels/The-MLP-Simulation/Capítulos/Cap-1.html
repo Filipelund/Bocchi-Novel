@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Images/Icon-do-site.ico" type="image/png">
+    <title>The Mlp Simulation: Cap. 1</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=NomeDaFonte&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<style>
+
+
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed; /* ou absolute, dependendo do caso */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../Capas-fotos/Capa-New-Simulation.webp');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100vh;
+  filter: brightness(30%) blur(2px);
+  z-index: -1; /* fica atrás do conteúdo */
+  pointer-events: none; /* para não interferir em cliques */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.Barra-superior {
+position: -webkit-sticky;
+top: 0;
+border-radius: 50%;
+color: white;
+display: flex;
+justify-content: left;/* Centraliza o conteúdo */
+align-items: center;
+height: 150px;
+width: 100%; /* Garantir que ocupe toda a largura */
+}
+
+
+
+.Barra-superior h1 {
+font-size: 30px;
+font-weight: bold;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+margin-right: 5px; /* Espaço entre o título e a imagem */
+margin-left: 15px;
+margin-bottom: 70px;
+color: RGB(255, 20, 147);
+border-bottom: 2px solid rgb(255, 0, 255);
+box-shadow: -5px -5px 5px rgb(255, 0, 255);
+-webkit-box-shadow: -5px -5px 5px rgb(255, 0, 255);
+border-radius: 4px;
+text-shadow: 2px 3px 2px #000;
+}
+
+
+
+
+
+.imagem-barra-superior {
+width: 50px;
+height: 50px;
+margin-bottom: 70px;
+background-image: url('/Images/Icon-pinterest.webp'); /* Substitua com a URL da imagem desejada */
+background-size: cover;
+background-position: center;
+border-radius: 50%;
+border: 2px solid RGB(70, 0, 130);
+}
+
+
+
+
+
+
+
+.seta-voltar {
+  font-size: 22px;
+  margin-bottom: 70px;
+  margin-left: auto;
+  margin-right: 20px;
+  border-radius: 25%;
+  padding: 10px;
+  box-shadow:
+    0 4px 6px rgba(0, 128, 102, 0.6),
+    0 0 10px rgba(0, 128, 204, 0.7),
+    inset 0 -3px 5px rgba(0, 100, 80, 0.8);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.1s ease;
+  text-shadow: 2px 3px 2px #000;
+}
+
+.seta-voltar:hover {
+  box-shadow:
+    0 6px 8px rgba(0, 160, 130, 0.8),
+    0 0 15px rgba(0, 150, 230, 0.9),
+    inset 0 -4px 6px rgba(0, 120, 90, 1);
+}
+
+/* Animação para parecer clicando */
+.seta-voltar:active {
+  transform: scale(0.95);
+  box-shadow:
+    0 2px 4px rgba(0, 128, 102, 0.4),
+    0 0 6px rgba(0, 128, 204, 0.5),
+    inset 0 -2px 3px rgba(0, 100, 80, 0.6);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu-inicial {
+  padding: 20px;
+  margin: 0 auto 30px;
+  max-width: 420px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  border-left: 4px solid #ff00ff;
+  border-right: 4px solid #ff00ff;
+  box-shadow: 0px 4px 10px rgba(255, 0, 255, 0.25);
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  transition: margin-bottom 0.3s ease;
+}
+
+
+
+.menu-titulo {
+  text-align: center;
+  font-size: 33px;
+  font-weight: bold;
+  color: whitesmoke;
+  font-family: Calibri, Candara, Segoe, Arial, sans-serif !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+.grade-botoes {
+display: grid;
+grid-template-columns: 2fr 1fr 2fr;
+position: relative; /* para conter o dropdown flutuante */
+gap: 30px;
+margin-top: 15px;
+}
+
+
+
+
+
+
+
+  .botao-capitulos {
+      color: whitesmoke;
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      position: relative; /* necessário para referência do dropdown */
+      z-index: 2;
+      background: linear-gradient(
+    to bottom,
+    #0a0a1a 0%,    /* Azul escuro profundo */
+    #2d2d44 40%,   /* Cinza-azulado intermediário */
+    #990099 100%,   /* Preto acinzentado */
+    #000000 100%   /* Preto sólido */
+  );
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.1s ease;
+  }
+
+
+
+  .botao-capitulos:hover {
+        color: white;
+        }
+
+
+/* Animação para parecer clicando */
+.botao-capitulos:active {
+  transform: scale(0.95);
+  box-shadow:
+    0 2px 2px rgba(0, 128, 102, 0.4),
+    0 0 2px rgba(0, 128, 204, 0.5),
+    inset 0 -2px 2px rgba(0, 100, 80, 0.6);
+}
+
+
+        .lista-capitulos {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: linear-gradient(
+    to bottom,
+    #0a0a1a 0%,
+    #2d2d44 40%,
+    #990099 100%,
+    #000000 100%
+    );
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.4s ease;
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+
+        .lista-capitulos.aberta {
+           display: block;  
+           max-height: 500px; /* altura suficiente para caber os itens */
+           opacity: 1;
+        }
+
+        .lista-capitulos li a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s ease;
+        }
+
+        .lista-capitulos li a:hover {
+          background: linear-gradient(
+        to bottom,
+        #0a0a1a 0%,    /* Azul escuro profundo */
+        #2d2d44 40%,   /* Cinza-azulado intermediário */
+        #ff00ff 100%,   /* Preto acinzentado */
+        #000000 100%   /* Preto sólido */
+          );
+            color: white;
+        }
+
+        .lista-capitulos li:last-child a {
+            border-bottom: none;
+        }
+
+              /* Animação para parecer clicando */
+      .lista-capitulos li a:active {
+        transform: scale(0.95);
+        box-shadow:
+          0 2px 2px rgba(0, 128, 102, 0.4),
+          0 0 2px rgba(0, 128, 204, 0.5),
+          inset 0 -2px 2px rgba(0, 100, 80, 0.6);
+      }
+
+
+
+
+
+
+
+
+
+.anterior-proximo {
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 15px;
+margin-bottom: 20px;
+background: linear-gradient(
+    to right,
+    rgb(13, 0, 46) 0%,
+    rgb(60, 0, 80) 100%
+  );
+border: 2px solid purple;
+border-radius: 6px;
+color: white;
+transform: translateY(10px);
+text-shadow: 2px 3px 2px #000;
+}
+
+
+
+/* Animação para parecer clicando */
+.anterior-proximo:active {
+  box-shadow: 
+    0 2px 5px rgba(0,0,0,0.2) inset, /* Sombra interna */
+    0 0 10px rgba(255,255,255,0.5); /* Brilho externo */
+    color: white; /* Vermelho ao clicar */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Grade-Novel {
+padding: 20px;
+margin: 0 auto 30px;
+margin-top: 45px;
+max-width: 420px;
+background: rgba(0, 0, 0, 0.6);
+border-radius: 10px;
+backdrop-filter: blur(4px);
+border-left: 4px solid #ff00ff;
+border-right: 4px solid #ff00ff;
+box-shadow: 0px 4px 10px rgba(255, 0, 255, 0.25);
+line-height: 1.7;
+letter-spacing: 0.3px;
+}
+
+
+.Grade-Novel:hover {
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 8px 20px rgba(255, 0, 255, 0.25);
+}
+
+
+
+
+
+.Grade-Novel h2 {
+color:bisque;
+font-style: italic;
+text-shadow: 2px 2px #000000;
+margin-bottom: 10px;
+}
+
+
+
+.Grade-Novel h1 {
+  font-family: 'Merriweather', Georgia, serif; /* Prioridade para Merriweather: alta legibilidade em telas[6] */
+  font-size: 20px;
+  line-height: 1.5; /* Aumento de 1.3 para 1.5: melhor respiro vertical[3][4] */
+  color: #f5f5f5; /* Whitesmoke padronizado em hex + ajuste de contraste */
+  font-weight: 500; /* Reduzido para 500: peso mais natural para serifadas[6] */
+  margin: 2rem 0; /* Aumento da margem para destacar títulos[5] */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.15); /* Sombra mais suave */
+  letter-spacing: 0.02em; /* Espaçamento entre letras sutil[1] */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu-final {
+  padding: 20px;
+  margin: 0 auto 30px;
+  max-width: 420px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  border-left: 4px solid #ff00ff;
+  border-right: 4px solid #ff00ff;
+  box-shadow: 0px 4px 10px rgba(255, 0, 255, 0.25);
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  transition: margin-bottom 0.3s ease;
+  margin-top: 30px;
+}
+
+
+
+
+.grade-botoes-final {
+  display: grid;
+  grid-template-columns: 100px 100px 100px; /* botões fixos, imagem flexível */
+  gap: 35px;
+  align-items: center; /* para alinhar verticalmente */
+  margin-bottom: -36px;
+  margin-top: -25px;
+}
+
+
+
+.menu-final button {
+padding: 10px;
+}
+
+
+
+.menu-final img {
+height: 150px;
+width: 160px;
+transform: translateX(8px);
+justify-self: center; /* centraliza horizontalmente */
+align-self: center;   /* centraliza verticalmente */
+filter: drop-shadow(0 0 1px violet) drop-shadow(0 0 1px violet);
+transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Novo container para comentários */
+.container-comentarios {
+    margin-top: 65px;
+    padding: 20px;
+    background-color: RGB(255, 182, 193);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding-top: 10px;
+
+}
+
+
+
+.container-comentarios h2 {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.texto-comentario p {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    padding-bottom: 10px;
+ filter: drop-shadow(0 0 1px #FFF);
+}
+
+
+
+
+
+
+.container-comentarios .github-link {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.container-comentarios .github-link a {
+    font-size: 18px;
+    color: #fff;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: -5px -5px 5px rgba(0,0,0,0.2);
+-webkit-box-shadow: -2px -2px 2px rgb(0, 0, 0, 0.2);
+}
+
+.container-comentarios .github-link a:hover {
+    background-color: #555;
+}
+
+
+
+
+
+.icone-Github {
+width: 40px;
+height: 40px;
+background-image: url('/Images/Icon-Github.webp'); /* Substitua com a URL da imagem desejada */
+background-size: cover;
+background-position: center;
+border-radius: 50%;
+margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#botao-voltar-topo,
+#botao-musica {
+  position: fixed;
+  z-index: 1000;
+  border: none;
+  background-color: #444;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+
+#botao-voltar-topo:hover,
+#botao-musica:hover {
+  transform: scale(20px);
+}
+
+
+
+
+
+#botao-voltar-topo {
+  bottom: 20px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transform: translateY(-4px);
+  opacity: 70%;
+  border: 2px solid #990099;
+  background: linear-gradient(to bottom, rgba(0, 128, 102, 0.4), rgba(0, 128, 204, 0.5));
+
+}
+
+
+
+
+
+#botao-musica {
+  bottom: 20px;
+  left: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  padding: 15px 15px 15px 15px;
+  opacity: 70%;
+  background: linear-gradient(to bottom, #ff00ff, #990099, #2d2d44);
+}
+
+
+#botao-musica i {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efeito de escala/opacity quando trocando ícone */
+#botao-musica i.trocando {
+  transform: scale(0.5);
+  opacity: 0;
+}
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+  
+
+
+<div class="Barra-superior">
+
+
+<h1>BocchiNovels</h1>
+<div class="imagem-barra-superior"></div>
+
+
+
+
+<h2 class="seta-voltar" style="cursor: pointer;">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+</svg>
+
+Voltar
+
+</h2>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button id="botao-voltar-topo" title="Voltar ao topo">  㐃 </button>
+
+
+
+
+
+<button id="botao-musica" title="Tocar música"> 
+    <i class="bi bi-play-circle" id="icone-musica"></i>
+</button>
+<audio id="audio-fundo" src="/Audio/Ensiferum - Victory Song (8-bit).aac" loop></audio>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="menu-inicial">
+
+
+
+
+<h1 class="menu-titulo">The MLP Simulation</h1>
+
+
+
+
+
+
+
+<div class="grade-botoes">
+
+
+
+
+
+
+<button style="opacity: 2%;" class="anterior-proximo"> ◀ Anterior </button>
+
+
+
+
+
+
+<button class="botao-capitulos" onclick="alternarListaCapitulos()">Mostrar Capítulos</button>
+
+<ul class="lista-capitulos" id="listaCapitulos">
+    <li><a href="Cap-1.html">Capítulo 1: William tem certeza disso?</a></li>
+    <li><a href="Cap-2.html">Capítulo 2: O que aconteceu?</a></li>
+</ul>
+
+
+
+
+
+
+
+<button class="anterior-proximo" id="proximo">Próximo  ▶ </button>
+
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="Grade-Novel">
+
+
+
+<h2>Cap. 1</h2>
+
+<h2>William tem certeza disso?</h2>
+
+
+
+
+<h1>Após os acontecimentos com a Legião do Mal formada por Cozy Glow, Tirek e Chrysalis, PoneyVille se via novamente em uma vivência de paz e amor, o céu estava limpo e radiante como girassóis alegres, o som do vento carregava cheiros de tortas deliciosas e muitas risadas,
+  
+  <br><br>
+  
+ <span style="text-decoration: line-through; background-color: #DB7093 ;"> (but not everyone was laughing). </span>
+
+  <br><br>
+
+  <span style="background-color: #C21E56;"> ERROR </span>
+
+  <br><br>
+  
+  <span style="background-color: #C21E56;"> 404 </span>
+  
+  <br>
+
+  <span style="background-color: #C21E56;"> ………. </span>
+
+  <br><br>
+  
+  <span style="text-decoration: line-through; background-color: #8B0000;"> RESTARTING </span>
+  <br>
+  .
+  <br>
+  .
+  <br>
+  .
+  <br>
+  …
+  <br>
+  …
+  <br><br>
+
+  ??? - Oxe, que estranho, er… não deve ser nada, kkkkkk. Olá, eu sou ERIN HUNTER kkkk zoeira, vou me apresentar: eu sou William, tenho 24 anos e sou um cara daora? Eu acho? Dane-se, kkkkk.
+  
+  <br><br>
+
+  *William rir com tranquilidade, enquanto se espreguiça na cadeira.*
+
+  <br><br>
+  
+  William - Sou um estudante aqui da Flórida, estou no terceiro semestre aqui da University of Florida (UF) – Gainesville, e é bem legal (o campus é grande e a cantina sempre tem pizza, e as aulas meio entendiosas, mas como tenho paixão em Computação eu aguento).
+  
+  <br><br>
+
+  *Mostrava um certo orgulho, mesmo que também se sentisse cansado*
+
+  <br><br>
+  
+  William - Sendo sincero, não tenho amigos, vivo trancado em meu quarto e eeeee… às vezes é bem solitário (enquanto uns vão para festas e jogos de futebol, eu tenho minha Netflix e miojo, rsrsrs), mas eu TENHO MEU COMPUTADOR :3 yeah, e meus pais estão <span style="text-decoration: underline;"> mortos. </span>
+  
+  <br><br>
+
+  …….
+  
+  <br><br>
+
+  *Ele olha para o teto um pouco melancolico, mas tenta mudar o foco, para acalmar suas emoções*
+
+  <br>
+  
+  …..
+  <br>
+  
+  …
+
+  <br><br>
+  
+  William - Bem, eu não gosto de tocar muito nesse assunto. De qualquer maneira, eu me sinto estranho por estar agora conversando com a câmera, sendo que ninguém vai assistir isso.
+  
+  <br><br>
+
+  *Observa ao redor do quarto, suspira e dá de ombros, mas se anima novamente*
+  
+  <br><br>
+
+  William - Porque estou fazendo isso, você deve se perguntar, telespectador inexistente. Er, estou documentando o uso de um novo software revolucionário que achei nos confins da internet, kkkkkk. Acho que ele pode me ajudar com minha solidão.
+  <br>
+  A descrição desse app é assim: "Bem-vindos, esse app foi desenvolvido em parceria com Evil Corporation, é inspirado no famoso desenho e quadrinhos de My Little Pony. Nele você poderá simular seu próprio mundo de MLP com você quase sendo um Deus, podendo observar e interferir. Ótimo para pessoas que não têm ninguém e <span style="text-decoration: underline line-through;">nada a perder.</span> Instale agora e viva um novo mundo!"
+
+  <br><br>
+
+  *Um certo estranhamente ele sente pelas palavras riscadas, mas logo ignora e animado para testar essa incrível nova tecnologia que estava nas suas mãos*
+
+  <br><br>
+
+  William - Parece bem divertido e não tenho muitas outras pra fazer e como um futuro engenheiro de computação quero observar como esse progama funciona, irei baixar telespectador e daqui a pouco irei mostrar na minha tela
+
+  <br><br>
+
+  *Estava animado e ansioso para testar, enquanto esperava o app baixar*
+
+  <br><br>
+
+  DOWLOAD CONCLUÍDO
+
+  <br><br>
+
+  William - EBA!!! mundo de my litthe pony hein? já vi esse desenho quando era criança, vamos ver como esse progama funciona, ter meu próprio mundo e vivencia-lo, quantas possibilidades serão possíveis, espero que não tenha vírus.
+
+  <br><br>
+
+  *Clica no app com muita empolgação e alegre para testar-lo*
+
+  <br><br>
+
+  APP INICIADO….
+
+  <br><br><br>
+
+  <span style="text-decoration: line-through; background-color: #DB7093 ;"> (THIS WAS NOT A GOOD CHOICE) </span>
+
+
+</h1>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="menu-final">
+
+  
+
+  <div class="grade-botoes-final">
+
+
+
+
+
+
+    <button style="opacity: 2%;" class="anterior-proximo" id="anteriorfinal"> ◀ Anterior </button>
+    
+    
+    
+    
+    
+    
+    <img src="/Images/Novel-icon-final.webp" alt="icone-final">
+    
+    
+    
+    
+    
+    
+    
+    <button class="anterior-proximo" id="proximofinal">Próximo  ▶ </button>
+    
+    
+    
+    
+    
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Container de Comentários e Link do GitHub -->
+<div class="container-comentarios">
+
+
+  <h2>Comentários</h2>
+  
+  <div class="texto-comentario">
+  <p>Bem, isso aqui é um projeto com o intuito de reproduzir um local para ler novels de forma única, com o meu estilo fofo :3</p>
+  </div>
+  
+  <div class="github-link">
+  <div class="icone-Github"></div>
+  <a href="https://github.com/Filipelund" target="_blank">Visite meu GitHub</a>
+  
+  
+  </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+
+
+
+
+
+const proximo = document.querySelector('#proximo'); 
+
+proximo.addEventListener('click', function() {
+    window.location.href = 'Cap-2.html';
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const proximofinal = document.querySelector('#proximofinal'); 
+
+proximofinal.addEventListener('click', function() {
+    window.location.href = 'Cap-2.html';
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const setavoltar= document.querySelector('.seta-voltar');
+
+setavoltar.addEventListener('click', function() {
+    window.location.href = '../The-MLP-Simulation.html';
+});
+
+
+
+
+
+
+
+
+
+
+function alternarListaCapitulos() {
+            const listaCapitulos = document.getElementById("listaCapitulos");
+            listaCapitulos.classList.toggle("aberta");
+            const botao = document.querySelector('.botao-capitulos');
+            botao.textContent = listaCapitulos.classList.contains('aberta') ? 'Esconder Capítulos' : 'Mostrar Capítulos';
+        }
+
+
+
+
+
+
+
+
+
+
+
+        function alternarListaCapitulos() {
+    const listaCapitulos = document.getElementById("listaCapitulos");
+    const botao = document.querySelector('.botao-capitulos');
+    const menuInicial = document.querySelector('.menu-inicial');
+
+    listaCapitulos.classList.toggle("aberta");
+
+    // Altera o texto do botão
+    botao.textContent = listaCapitulos.classList.contains('aberta') 
+        ? 'Esconder Capítulos' 
+        : 'Mostrar Capítulos';
+
+    // Adiciona ou remove a margem inferior
+    if (listaCapitulos.classList.contains('aberta')) {
+        menuInicial.style.marginBottom = "150px"; // ou o valor desejado
+    } else {
+        menuInicial.style.marginBottom = "45px"; // valor original
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Função: Voltar ao topo
+const botaoVoltarTopo = document.getElementById("botao-voltar-topo");
+
+botaoVoltarTopo.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+
+// Função: de Música
+const botaoMusica = document.getElementById("botao-musica");
+const iconeMusica = document.getElementById("icone-musica");
+const audioFundo = document.getElementById("audio-fundo");
+
+let tocando = false;
+
+botaoMusica.addEventListener("click", () => {
+  // Aplica a animação de transição no ícone
+  iconeMusica.classList.add("trocando");
+
+  // Troca visual do ícone com transição suave
+  setTimeout(() => {
+    if (!tocando) {
+      // Estava parado → agora vai tocar
+      audioFundo.play();
+      iconeMusica.classList.remove("bi-play-circle");
+      iconeMusica.classList.add("bi-pause");
+      botaoMusica.classList.add("pulsando");
+    } else {
+      // Estava tocando → agora pausa
+      audioFundo.pause();
+      iconeMusica.classList.remove("bi-pause");
+      iconeMusica.classList.add("bi-play-circle");
+      botaoMusica.classList.remove("pulsando");
+    }
+
+    iconeMusica.classList.remove("trocando");
+    tocando = !tocando;
+  }, 150);
+});
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+    
+
+
+
+</body>
+</html>
