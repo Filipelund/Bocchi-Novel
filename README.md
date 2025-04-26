@@ -2,7 +2,7 @@
 
 ## Descrição do Site: BocchiNovels
 
-BocchiNovels é uma plataforma super fofa dedicada à leitura e compartilhamento de novels, com um foco especial em histórias inspiradas no universo de *My Little Pony*! 🦄✨ O site oferece uma experiência única e interativa para os leitores, permitindo que eles explorem mundos fictícios de maneira envolvente e divertida. :3
+BocchiNovels é uma plataforma super fofa dedicada à leitura de novels, com um foco especial em histórias inspiradas no universo de *My Little Pony*! 🦄✨ Mas também minhas novels em si kkkk ou dos outros, o site oferece uma experiência única e interativa para os leitores, permitindo que eles explorem mundos fictícios de maneira envolvente e divertida. :3
 
 ## Funcionalidades 🌈
 
@@ -12,8 +12,6 @@ BocchiNovels é uma plataforma super fofa dedicada à leitura e compartilhamento
 
 - **Capítulos Interativos**: Cada capítulo é apresentado de forma interativa, permitindo que os leitores cliquem para expandir listas de capítulos e acessem diretamente as partes que desejam ler. Yay! 🎉
 
-- **Comentários e Feedback**: Os leitores podem deixar comentários sobre os capítulos, promovendo uma comunidade ativa e engajada. 💬
-
 - **Links para GitHub**: O site inclui um link para o GitHub do criador, permitindo que os usuários explorem mais sobre o projeto e contribuam com feedback ou sugestões. 💖
 
 ## Títulos Disponíveis 📚
@@ -22,7 +20,7 @@ Atualmente, o site apresenta o título "The MLP Simulation", que conta a histór
 
 ## Imagens Aleatórias 🖼️
 
-Aqui estão algumas imagens aleatórias que representam a interface e os elementos do site:
+Aqui estão algumas imagens aleatórias porque sim kkksksks :
 
 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
     <img src="https://i.pinimg.com/736x/d0/d9/bc/d0d9bc538eb4220de02edc4e2a40a62d.jpg" alt="Imagem Aleatória 1" style="width: 200px; height: auto; border-radius: 8px;">
@@ -32,4 +30,4 @@ Aqui estão algumas imagens aleatórias que representam a interface e os element
 
 ## Conclusão 💖
 
-BocchiNovels é mais do que apenas um site de leitura; é uma comunidade para amantes de histórias que desejam explorar novas narrativas e interagir com outros leitores. Com um design atraente e funcionalidades interativas, o site promete uma experiência de leitura única e envolvente. Venha se divertir com a gente! :D
+BocchiNovels é mais do que apenas um site de leitura; é um espaço para novels pessoais onde possa ser compartilhado e armazenado para todos os divos e divas :3 . Com um design atraente e funcionalidades interativas, o site promete uma experiência de leitura única e envolvente. Venha se divertir com a gente! :D
