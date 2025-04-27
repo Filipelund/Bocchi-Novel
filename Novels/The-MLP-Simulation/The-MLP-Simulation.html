@@ -960,7 +960,7 @@ Compartilhar
 const iconHome = document.querySelector('.icon-home');
 
 iconHome.addEventListener('click', function() {
-    window.location.href = 'Home.html';
+    window.location.href = '../../Home.html';
 });
 
 
@@ -972,7 +972,7 @@ iconHome.addEventListener('click', function() {
 const iniciarleitura = document.querySelector('.iniciar-leitura');
 
 iniciarleitura.addEventListener('click', function() {
-    window.location.href = 'Novels/The-MLP-Simulation/Capítulos/Cap-1.html';
+    window.location.href = 'Capítulos/Cap-1.html';
 });
 
 
@@ -996,7 +996,7 @@ iniciarleitura.addEventListener('click', function() {
         await navigator.share({
           title: document.title,
           text: 'Veja este link interessante!',
-          url: 'https://getbootstrap.com/docs/5.0/extend/icons/'// pode trocar para qualquer link desejado
+          url: 'https://filipelund.github.io/Bocchi-Novel/Novels/The-MLP-Simulation/The-MLP-Simulation.html'// pode trocar para qualquer link desejado
         });
         console.log('Compartilhamento realizado com sucesso!');
       } catch (erro) {
@@ -1065,8 +1065,8 @@ iniciarleitura.addEventListener('click', function() {
 
 
 const linksCapitulos = {
-    "Cap. 1": 'Novels/The-MLP-Simulation/Capítulos/Cap-1.html',
-    "Cap. 2": "Novels/The-MLP-Simulation/Capítulos/Cap-2.html",
+    "Cap. 1": 'Capítulos/Cap-1.html',
+    "Cap. 2": "Capítulos/Cap-2.html",
     // Adicione mais pares texto:link aqui
   };
 
